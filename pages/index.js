@@ -20,12 +20,21 @@ export default function Home() {
           <title>Home • My Spotify Stats</title>
         </Head>
 
-        <div className='flex flex-col items-center text-white mt-80 h-1/2 '>
-          <p className='py-2 text-4xl text-spotify'>Welcome to Statify!</p>
-          <p className='pb-5 font-mono text-4xl text-center'>{session.token.name}</p>
-          <p>{session.token.email}</p>
-          <img src={session.token.img}></img>
-          <p>{session.token.accessToken}</p>
+        <div className='flex flex-col items-center mt-56 text-white h-1/2 '>
+          <p className='py-2 mb-6 text-4xl text-spotify'><span className='text-white'>Welcome to</span> Statify <span className="text-white">{session.token.name}</span>!</p>
+
+          <p className="mb-8 font-mono text-center">You can check your Playlists, Top Artists, Top Tracks by following the links</p>
+          <div className="flex flex-row">
+            <Link href={`/playlists`}>
+              <a className="py-2 mx-4 transition ease-in-out rounded-md shadow-md bg-spotify-sec px-9 hover:scale-110">PLAYLISTS</a>
+            </Link>
+            <Link href={`/topartists`}>
+              <a className="py-2 mx-4 transition ease-in-out rounded-md shadow-md bg-spotify-sec px-9 hover:scale-110">TOP ARTISTS</a>
+            </Link>
+            <Link href={`/toptracks`}>
+              <a className="py-2 mx-4 transition ease-in-out rounded-md shadow-md bg-spotify-sec px-9 hover:scale-110">TOP TRACKS</a>
+            </Link>
+          </div>
         </div>
 
       </>
@@ -37,7 +46,7 @@ export default function Home() {
         <title>Home • My Spotify Stats</title>
       </Head>
 
-      <div className='flex flex-col items-center text-white mt-80 h-1/2 '>
+      <div className='flex flex-col items-center mt-64 text-white h-1/2 '>
         <p className='py-2 text-4xl text-spotify'>Statify</p>
         <p className='pb-5 font-mono text-center'>A website to check your Top Tracks and Top Artists on <a className="underline text-spotify" href="https://spotify.com">Spotify</a>.</p>
 
