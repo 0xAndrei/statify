@@ -17,7 +17,7 @@ export default function Home() {
             </Head>
 
             <div className='flex flex-col items-center text-white mt-80 h-1/2 '>
-                <Card icon={FaBeer}></Card>
+             
                 
             </div>
         </>
