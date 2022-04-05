@@ -29,7 +29,6 @@ export default NextAuth(
             },
             async session(session, user) {
                 session.user = user;
-
                 return session;
             },
         },
