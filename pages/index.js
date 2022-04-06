@@ -20,9 +20,9 @@ export default function Home() {
           <title>Home • My Spotify Stats</title>
         </Head>
 
-        <div className='flex flex-col items-center text-white mt-96 h-1/2 '>
+        <div className='flex flex-col items-center mt-32 text-white'>
           <p className='py-2 mb-6 text-4xl text-spotify'><span className='text-white'>Welcome to</span> Statify <span className="text-white">{session.token.name}</span>!</p>
-          
+          <br/>
           <p className="mb-8 font-mono text-center">You can check your Playlists, Top Artists, Top Tracks by following the links</p>
           <div className="flex flex-row">
             <Link href={`/playlists`}>

@@ -13,7 +13,12 @@ export default function profile( { xx } ) {
     const { data: session, status } = useSession()
     const [url, setUrl] = useState(null)
     const [artist, setArtist] = useState(null)
-    const [title, setTitle] = useState()
+    const [title, setTitle] = useState(null)
+    const [country, setCountry] = useState(null)
+    const [displayName, setDisplayName] = useState(null)
+    const [email, setEmail] = useState(null)
+    const [follower, setFollower] = useState(null)
+    const [sub, setSub] = useState(null)
 
     useEffect(() => {
         fetch("http://localhost:3000/api/currentsong")
@@ -22,6 +27,15 @@ export default function profile( { xx } ) {
             setUrl(data.songUrl)
             setArtist(data.artist)
             setTitle(data.title)
+        })
+        fetch("http://localhost:3000/api/profile")
+        .then(res => res.json())
+        .then((data) => {
+            setCountry(data.country)
+            setDisplayName(data.display_name)
+            setEmail(data.email)
+            setFollower(data.followers)
+            setSub(data.sub)
         })
         
     }, [])
@@ -39,15 +53,18 @@ export default function profile( { xx } ) {
                     <div className='mb-16 text-center '>
                         <p className='py-2 mb-6 text-4xl '>{session.token.name}'s Profile</p>
                         <div className="">
-                            <div className='p-16 pt-4 pb-6 mb-6 bg-opacity-50 rounded shadow-md bg-sec'>
+                            <div className='p-16 pt-1 pb-6 mb-6 bg-opacity-50 rounded shadow-md bg-sec'>
                                 <div className='md:flex md:flex-row'>
                                     <img className='m-auto rounded-full md:p-6 md:mt-6 md:rounded-full ' src={session.token.picture} height="250" width="250"></img>
                                     <div className='flex flex-col justify-center p-6 '>
                                         <p className='font-mono text-gray-400'>Username</p>
-                                        <p>{session.token.name}</p>
+                                        <p>{displayName}</p>
                                         <br />
                                         <p className='font-mono text-gray-400'>Email</p>
-                                        <p>{session.token.email}</p>
+                                        <p>{email}</p>
+                                        <br />
+                                        <p className='font-mono text-gray-400'>Subscription</p>
+                                        <p>{sub}</p>
                                     </div>
 
                                 </div>

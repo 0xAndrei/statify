@@ -27,9 +27,9 @@ export default function playlists({ items }) {
                     <div className='mb-16 text-center '>
                         <p className='py-2 mb-6 text-4xl '>{session.token.name}'s Playlists</p>
                         <div className="grid grid-cols-1 md:grid md:grid-cols-3 md:gap-6 ">
-
+                           
                             {list.map((item) => (
-                                <div className="pt-4 pb-6 mb-6 transition ease-in-out bg-opacity-50 rounded shadow-md bg-sec hover:scale-110 hover:text-spotify" key={item.id}>
+                                <div className="px-6 pt-4 pb-6 mb-6 transition ease-in-out bg-opacity-50 rounded shadow-md bg-sec hover:scale-110 hover:text-spotify" key={item.id}>
 
                                     <a className="flex justify-center" href={item.uri}>
 

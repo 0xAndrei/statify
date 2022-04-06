@@ -6,7 +6,7 @@ body {
   background-color: #0B1622;
   background-image: url("../public/assets/background.svg");
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat-x;
   background-size: cover;
   height: 100vh; 
 }

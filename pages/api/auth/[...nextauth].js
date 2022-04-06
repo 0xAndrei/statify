@@ -11,7 +11,7 @@ export default NextAuth(
                 clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
                 authorization: {
                     params: {
-                        scope: "user-read-currently-playing user-read-email user-top-read"
+                        scope: "user-read-currently-playing user-read-email user-top-read user-read-private user-follow-read"
                     }
                 },
             }),
@@ -29,6 +29,7 @@ export default NextAuth(
             },
             async session(session, user) {
                 session.user = user;
+                console.log(session)
                 return session;
             },
         },
