@@ -8,7 +8,7 @@ export default async function handler(req, res) {
   const settings = {
     method: 'GET',
     headers: {
-      'Authorization': "Bearer BQCVRzulfbY7uc8kuQLq5FDhB6Ks1ymS7MY32M5PK3Dlf4nfBdILFIz0s4FPpdJ__m7hpmq3o8LjNHwRmVsD4lX1xmTGTZfgvwVGTYmoj06i6PapRovcXSlwKn7Mr1ZHooO4SCqb4I7sYm2xjjoXahJ2VikGOHV8n6eglQfW",
+      'Authorization': "Bearer",
       'Content-Type': 'application/json',
       "Accept" : ' application/json'
     }
